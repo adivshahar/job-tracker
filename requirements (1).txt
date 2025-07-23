@@ -1,2 +1,5 @@
+Flask
 requests
-flask
+beautifulsoup4
+schedule
+python-dotenv
