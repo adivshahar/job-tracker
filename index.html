@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>Job Tracker Dashboard</title></head>
+<body>
+    <h1>Tracked Jobs</h1>
+    <table border="1">
+        <tr><th>Company</th><th>Position</th><th>Posted</th></tr>
+        {% for job in jobs %}
+        <tr>
+            <td>{{ job.company }}</td>
+            <td>{{ job.position }}</td>
+            <td>{{ job.date_posted }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+    
