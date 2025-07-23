@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Microsoft",
+    "careers_url": "https://careers.microsoft.com/v2/global/en/locations/israel.html"
+  },
+  {
+    "name": "Google",
+    "careers_url": "https://careers.google.com"
+  },
+  {
+    "name": "Meta",
+    "careers_url": "https://www.metacareers.com"
+  },
+  {
+    "name": "Amazon",
+    "careers_url": "https://www.amazon.jobs/en/location/tel-aviv-israel"
+  },
+  {
+    "name": "Apple",
+    "careers_url": "https://jobs.apple.com/en-il"
+  },
+  {
+    "name": "Intel",
+    "careers_url": "https://jobs.intel.com"
+  },
+  {
+    "name": "Nvidia",
+    "careers_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite?locations=Locations%3A%3AISR"
+  },
+  {
+    "name": "TikTok",
+    "careers_url": "https://careers.tiktok.com/position?keywords=&location=CT_40"
+  },
+  {
+    "name": "Dell",
+    "careers_url": "https://jobs.dell.com/search-jobs/Israel"
+  },
+  {
+    "name": "Salesforce",
+    "careers_url": "https://www.salesforce.com/company/careers/locations/israel/"
+  }
+]
