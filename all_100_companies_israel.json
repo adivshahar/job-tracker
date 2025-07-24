@@ -1,42 +1,502 @@
 [
   {
-    "name": "Microsoft",
-    "careers_url": "https://careers.microsoft.com/v2/global/en/locations/israel.html"
-  },
-  {
     "name": "Google",
-    "careers_url": "https://careers.google.com"
+    "careers_url": "https://careers.google.com",
+    "type": "international"
   },
   {
-    "name": "Meta",
-    "careers_url": "https://www.metacareers.com"
-  },
-  {
-    "name": "Amazon",
-    "careers_url": "https://www.amazon.jobs/en/location/tel-aviv-israel"
-  },
-  {
-    "name": "Apple",
-    "careers_url": "https://jobs.apple.com/en-il"
+    "name": "Microsoft",
+    "careers_url": "https://careers.microsoft.com/v2/global/en/locations/israel.html",
+    "type": "international"
   },
   {
     "name": "Intel",
-    "careers_url": "https://jobs.intel.com"
+    "careers_url": "https://jobs.intel.co.il",
+    "type": "international"
+  },
+  {
+    "name": "Apple",
+    "careers_url": "https://jobs.apple.com/en-us/search?location=israel-ISR",
+    "type": "international"
+  },
+  {
+    "name": "Amazon",
+    "careers_url": "https://www.amazon.jobs/en/locations/tel-aviv-israel",
+    "type": "international"
+  },
+  {
+    "name": "Meta (Facebook)",
+    "careers_url": "https://www.metacareers.com/jobs",
+    "type": "international"
+  },
+  {
+    "name": "IBM",
+    "careers_url": "https://www.ibm.com/careers",
+    "type": "international"
+  },
+  {
+    "name": "Cisco",
+    "careers_url": "https://jobs.cisco.com/jobs/SearchJobs/?21178=%5B102692%5D&21178_format=6020&listFilterMode=1",
+    "type": "international"
+  },
+  {
+    "name": "Oracle",
+    "careers_url": "https://careers.oracle.com",
+    "type": "international"
+  },
+  {
+    "name": "HP (Inc.)",
+    "careers_url": "https://jobs.hp.com",
+    "type": "international"
   },
   {
     "name": "Nvidia",
-    "careers_url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite?locations=Locations%3A%3AISR"
+    "careers_url": "https://www.nvidia.com/en-us/about-nvidia/careers/",
+    "type": "international"
   },
   {
-    "name": "TikTok",
-    "careers_url": "https://careers.tiktok.com/position?keywords=&location=CT_40"
-  },
-  {
-    "name": "Dell",
-    "careers_url": "https://jobs.dell.com/search-jobs/Israel"
+    "name": "SAP",
+    "careers_url": "https://jobs.sap.com",
+    "type": "international"
   },
   {
     "name": "Salesforce",
-    "careers_url": "https://www.salesforce.com/company/careers/locations/israel/"
+    "careers_url": "https://careers.salesforce.com",
+    "type": "international"
+  },
+  {
+    "name": "Dell Technologies",
+    "careers_url": "https://jobs.dell.com/en/israel",
+    "type": "international"
+  },
+  {
+    "name": "Qualcomm",
+    "careers_url": "https://careers.qualcomm.com",
+    "type": "international"
+  },
+  {
+    "name": "Broadcom",
+    "careers_url": "https://www.broadcom.com/careers",
+    "type": "international"
+  },
+  {
+    "name": "Texas Instruments",
+    "careers_url": "https://careers.ti.com",
+    "type": "international"
+  },
+  {
+    "name": "Western Digital (SanDisk)",
+    "careers_url": "https://www.westerndigital.com/company/careers",
+    "type": "international"
+  },
+  {
+    "name": "Marvell Technology",
+    "careers_url": "https://www.marvell.com/company/careers.html",
+    "type": "international"
+  },
+  {
+    "name": "ZoomInfo",
+    "careers_url": "https://www.zoominfo.com/about/careers",
+    "type": "international"
+  },
+  {
+    "name": "Cross River",
+    "careers_url": "https://www.crossriver.com/careers",
+    "type": "international"
+  },
+  {
+    "name": "Navan (TripActions)",
+    "careers_url": "https://navan.com/careers",
+    "type": "international"
+  },
+  {
+    "name": "Remitly",
+    "careers_url": "https://careers.remitly.com",
+    "type": "international"
+  },
+  {
+    "name": "eBay",
+    "careers_url": "https://jobs.ebayinc.com/us/en/jobs-in-israel",
+    "type": "international"
+  },
+  {
+    "name": "VMware",
+    "careers_url": "https://careers.vmware.com",
+    "type": "international"
+  },
+  {
+    "name": "Palo Alto Networks",
+    "careers_url": "https://jobs.paloaltonetworks.com",
+    "type": "international"
+  },
+  {
+    "name": "General Motors",
+    "careers_url": "https://search-careers.gm.com/en/locations/israel/",
+    "type": "international"
+  },
+  {
+    "name": "Arm",
+    "careers_url": "https://careers.arm.com",
+    "type": "international"
+  },
+  {
+    "name": "Philips",
+    "careers_url": "https://www.careers.philips.com/il/en/",
+    "type": "international"
+  },
+  {
+    "name": "Via (Via Transportation)",
+    "careers_url": "https://ridewithvia.com/careers",
+    "type": "international"
+  },
+  {
+    "name": "Vimeo",
+    "careers_url": "https://vimeo.com/careers",
+    "type": "international"
+  },
+  {
+    "name": "Check Point Software",
+    "careers_url": "https://www.checkpoint.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Wix",
+    "careers_url": "https://careers.wix.com",
+    "type": "israeli"
+  },
+  {
+    "name": "Monday.com",
+    "careers_url": "https://monday.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Teva Pharmaceutical",
+    "careers_url": "https://www.tevapharm.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Mobileye",
+    "careers_url": "https://www.mobileye.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "NICE Ltd.",
+    "careers_url": "https://www.nice.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Bank Leumi",
+    "careers_url": "https://www.leumi.co.il/he/about-leumi/Career",
+    "type": "israeli"
+  },
+  {
+    "name": "Bank Hapoalim",
+    "careers_url": "https://www.bankhapoalim.co.il/he/jobs-site",
+    "type": "israeli"
+  },
+  {
+    "name": "ZIM Integrated Shipping",
+    "careers_url": "https://www.zim.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Tower Semiconductor",
+    "careers_url": "https://towersemi.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Amdocs",
+    "careers_url": "https://www.amdocs.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Elbit Systems",
+    "careers_url": "https://elbitsystemscareer.com",
+    "type": "israeli"
+  },
+  {
+    "name": "Bezeq",
+    "careers_url": "https://www.bezeq.co.il/career",
+    "type": "israeli"
+  },
+  {
+    "name": "Cellcom",
+    "careers_url": "https://cellcom.co.il",
+    "type": "israeli"
+  },
+  {
+    "name": "Partner Communications",
+    "careers_url": "https://www.partner.co.il",
+    "type": "israeli"
+  },
+  {
+    "name": "HOT Telecommunications",
+    "careers_url": "https://www.hot.net.il",
+    "type": "israeli"
+  },
+  {
+    "name": "ICL Group",
+    "careers_url": "https://careers.icl-group.com",
+    "type": "israeli"
+  },
+  {
+    "name": "Artlist",
+    "careers_url": "https://artlist.io/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "AppsFlyer",
+    "careers_url": "https://www.appsflyer.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "accessiBe",
+    "careers_url": "https://accessibe.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "ActiveFence",
+    "careers_url": "https://activefence.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Bringg",
+    "careers_url": "https://www.bringg.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Cognyte",
+    "careers_url": "https://careers.cognyte.com",
+    "type": "israeli"
+  },
+  {
+    "name": "DealHub",
+    "careers_url": "https://dealhub.io/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Elementor",
+    "careers_url": "https://elementor.com/jobs",
+    "type": "israeli"
+  },
+  {
+    "name": "Forter",
+    "careers_url": "https://www.forter.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Fireblocks",
+    "careers_url": "https://www.fireblocks.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Freightos",
+    "careers_url": "https://www.freightos.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Guesty",
+    "careers_url": "https://www.guesty.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "GeoEdge",
+    "careers_url": "https://geoedge.com/company/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Headline Media",
+    "careers_url": "https://headline.media/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "HiredScore",
+    "careers_url": "https://www.hiredscore.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Incredibuild",
+    "careers_url": "https://www.incredibuild.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Simply (JoyTunes)",
+    "careers_url": "https://www.joytunes.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Juno Journey",
+    "careers_url": "https://www.junojourney.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Kaltura",
+    "careers_url": "https://corp.kaltura.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Lightricks",
+    "careers_url": "https://www.lightricks.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Lemonade",
+    "careers_url": "https://www.lemonade.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Lusha",
+    "careers_url": "https://www.lusha.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "MyHeritage",
+    "careers_url": "https://careers.myheritage.com",
+    "type": "israeli"
+  },
+  {
+    "name": "Moon Active",
+    "careers_url": "https://www.moonactive.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Natural Intelligence",
+    "careers_url": "https://www.naturalint.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Outbrain",
+    "careers_url": "https://www.outbrain.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Overwolf",
+    "careers_url": "https://www.overwolf.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Payoneer",
+    "careers_url": "https://www.payoneer.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Playtika",
+    "careers_url": "https://www.playtika.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Riskified",
+    "careers_url": "https://www.riskified.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Riverside.fm",
+    "careers_url": "https://jobs.lever.co/riverside",
+    "type": "israeli"
+  },
+  {
+    "name": "SodaStream",
+    "careers_url": "https://sodastream.com/pages/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "SolarEdge",
+    "careers_url": "https://www.solaredge.com/us/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Similarweb",
+    "careers_url": "https://www.similarweb.com/corp/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Taboola",
+    "careers_url": "https://www.taboola.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Unity (ironSource)",
+    "careers_url": "https://careers.ironsrc.com",
+    "type": "israeli"
+  },
+  {
+    "name": "WalkMe",
+    "careers_url": "https://www.walkme.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "WSC Sports",
+    "careers_url": "https://wsc-sports.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "XM Cyber",
+    "careers_url": "https://xmcyber.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Yotpo",
+    "careers_url": "https://www.yotpo.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Fiverr",
+    "careers_url": "https://www.fiverr.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Checkmarx",
+    "careers_url": "https://checkmarx.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "CyberArk",
+    "careers_url": "https://www.cyberark.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Imperva",
+    "careers_url": "https://www.imperva.com/company/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Rapyd",
+    "careers_url": "https://www.rapyd.net/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "SentinelOne",
+    "careers_url": "https://www.sentinelone.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Rafael Advanced Defense Systems",
+    "careers_url": "https://career.rafael.co.il",
+    "type": "israeli"
+  },
+  {
+    "name": "Israel Aerospace Industries (IAI)",
+    "careers_url": "https://www.iai.co.il/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Gilat Satellite Networks",
+    "careers_url": "https://www.gilat.com/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Verint Systems",
+    "careers_url": "https://www.verint.com/company/careers",
+    "type": "israeli"
+  },
+  {
+    "name": "Bank Discount",
+    "careers_url": "https://ehsb.fa.em2.oraclecloud.com/hcmUI/CandidateExperience",
+    "type": "israeli"
+  },
+  {
+    "name": "Strauss Group",
+    "careers_url": "https://www.strauss-group.com/careers",
+    "type": "israeli"
   }
 ]
