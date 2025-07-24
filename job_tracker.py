@@ -3,7 +3,7 @@ import requests
 from time import sleep
 
 # Load company list from file
-with open("all_100_companies_israel.json", "r") as f:
+with open("all_100_companies_israel.json", "r", encoding="utf-8") as f:
     companies = json.load(f)
 
 # Check URL availability
@@ -15,11 +15,16 @@ def check_url_status(company):
         return f"Error: {e}"
 
 def main():
-    print("🔍 Checking company career pages:")
-    for company in companies:
+    print("🚀 Starting job tracker check...\n")
+    print(f"Total companies to check: {len(companies)}\n")
+
+    for i, company in enumerate(companies, start=1):
+        print(f"🔍 [{i}] Checking: {company['name']} - {company['careers_url']}")
         status = check_url_status(company)
-        print(f"- {company['name']}: {status}")
-        sleep(0.5)  # Be polite to servers
+        print(f"➡️ Status: {status}\n")
+        sleep(0.5)  # To avoid hammering servers
+
+    print("✅ Job tracker scan completed.")
 
 if __name__ == "__main__":
     main()
