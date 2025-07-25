@@ -1,102 +1,121 @@
 
-import json
-import requests
+import smtplib
 import sqlite3
+import requests
+import json
 import os
+import logging
 from bs4 import BeautifulSoup
-from time import sleep
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import smtplib
+from urllib.parse import urljoin
 
 # Configuration
 EMAIL = "adivshahar@gmail.com"
-APP_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 DB_NAME = "jobs.db"
-COMPANIES_FILE = "all_100_companies_israel.json"
+COMPANIES_FILE = "data/companies.json"
+LOG_FILE = "job_tracker.log"
+
 KEYWORDS = [
-    "partner", "partnership", "channel", "alliance", "alliances",
+    "partner", "partnership", "channel", "alliances",
     "business development", "bd", "strategic accounts", "gaming",
-    "MEA", "account manager", "EMEA", "CEE"
+    "MEA", "EMEA", "CEE", "account manager"
 ]
 
-# Initialize DB
+# Logging setup
+logging.basicConfig(filename=LOG_FILE, level=logging.INFO, format='%(asctime)s %(message)s')
+
 def init_db():
     conn = sqlite3.connect(DB_NAME)
     c = conn.cursor()
-    c.execute(
-        "CREATE TABLE IF NOT EXISTS jobs ("
-        "company TEXT, "
-        "url TEXT, "
-        "found_keywords TEXT, "
-        "PRIMARY KEY (company, url))"
-    )
+    c.execute("CREATE TABLE IF NOT EXISTS sent_jobs (job_id TEXT PRIMARY KEY)")
     conn.commit()
     conn.close()
 
-# Save new result
-def save_new_job(company, url, keywords):
+def is_new_job(job_id):
     conn = sqlite3.connect(DB_NAME)
     c = conn.cursor()
+    c.execute("SELECT job_id FROM sent_jobs WHERE job_id = ?", (job_id,))
+    result = c.fetchone()
+    conn.close()
+    return result is None
+
+def mark_job_as_sent(job_id):
+    conn = sqlite3.connect(DB_NAME)
+    c = conn.cursor()
+    c.execute("INSERT OR IGNORE INTO sent_jobs (job_id) VALUES (?)", (job_id,))
+    conn.commit()
+    conn.close()
+
+def load_companies():
+    with open(COMPANIES_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def clean_link(href, base_url):
+    if not href.startswith("http"):
+        return urljoin(base_url, href)
+    return href
+
+def scrape_jobs_from_page(company_name, url):
+    jobs = []
     try:
-        c.execute("INSERT INTO jobs (company, url, found_keywords) VALUES (?, ?, ?)",
-                  (company, url, ", ".join(keywords)))
-        conn.commit()
-        return True
-    except sqlite3.IntegrityError:
-        return False
-    finally:
-        conn.close()
+        response = requests.get(url, timeout=15, headers={"User-Agent": "Mozilla/5.0"})
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, "html.parser")
+        links = soup.find_all("a", href=True)
 
-# Search page content
-def find_keywords(text):
-    return [kw for kw in KEYWORDS if kw.lower() in text.lower()]
+        for link in links:
+            text = link.get_text().strip().lower()
+            href = clean_link(link["href"], url)
+            if any(k in text for k in KEYWORDS):
+                job_id = href.split("/")[-1][:64]
+                jobs.append({
+                    "id": f"{company_name}_{job_id}",
+                    "title": text.title(),
+                    "url": href
+                })
+    except Exception as e:
+        logging.error(f"Error checking {company_name}: {e}")
+    return jobs
 
-# Send email
-def send_email(new_jobs):
-    if not new_jobs:
-        return
+def send_email(jobs):
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = "🎯 New Relevant Job Postings Found"
+    msg["Subject"] = "🟢 New Job Opportunities Found"
     msg["From"] = EMAIL
     msg["To"] = EMAIL
-    html = "<h2>New Job Matches</h2><ul>"
-    for job in new_jobs:
-        html += f"<li><strong>{job['company']}</strong>: <a href='{job['url']}'>{job['url']}</a> <br>🔍 Matched keywords: {', '.join(job['keywords'])}</li>"
+
+    html = "<h2>🚀 New Relevant Job Listings:</h2><ul>"
+    for job in jobs:
+        html += f"<li><b>{job['title']}</b><br><a href='{job['url']}'>{job['url']}</a></li>"
     html += "</ul>"
+
     msg.attach(MIMEText(html, "html"))
+    try:
+        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+            server.starttls()
+            server.login(EMAIL, EMAIL_PASSWORD)
+            server.sendmail(EMAIL, EMAIL, msg.as_string())
+    except Exception as e:
+        logging.error(f"Email send failed: {e}")
 
-    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
-        server.starttls()
-        server.login(EMAIL, APP_PASSWORD)
-        server.sendmail(EMAIL, EMAIL, msg.as_string())
-
-# Main
 def main():
     init_db()
-    with open(COMPANIES_FILE, "r") as f:
-        companies = json.load(f)
-
-    new_matches = []
-
+    companies = load_companies()
+    new_jobs = []
     for company in companies:
-        name = company["name"]
-        url = company["careers_url"]
-        try:
-            res = requests.get(url, timeout=10)
-            if res.status_code in [200, 301]:
-                soup = BeautifulSoup(res.text, "html.parser")
-                text = soup.get_text()
-                found = find_keywords(text)
-                if found and save_new_job(name, url, found):
-                    new_matches.append({"company": name, "url": url, "keywords": found})
-            sleep(1)
-        except Exception as e:
-            print(f"Error checking {name}: {e}")
-
-    send_email(new_matches)
+        name = company.get("name", "Unknown")
+        url = company.get("careers_url")
+        if url:
+            found_jobs = scrape_jobs_from_page(name, url)
+            for job in found_jobs:
+                if is_new_job(job["id"]):
+                    mark_job_as_sent(job["id"])
+                    new_jobs.append(job)
+    if new_jobs:
+        send_email(new_jobs)
 
 if __name__ == "__main__":
     main()
