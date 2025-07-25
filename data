@@ -1,0 +1,5 @@
+/your-project-root
+├── data/
+│   └── all_100_companies_israel.json
+├── src/
+│   └── job_tracker.py
