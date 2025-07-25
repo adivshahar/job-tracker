@@ -16,7 +16,7 @@ EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 DB_NAME = "jobs.db"
-COMPANIES_FILE = "data/companies.json"
+COMPANIES_FILE = "data/all_100_companies_israel.json"
 LOG_FILE = "job_tracker.log"
 
 KEYWORDS = [
