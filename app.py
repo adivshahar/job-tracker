@@ -8,6 +8,9 @@ app = Flask(__name__)
 def index():
     conn = sqlite3.connect("jobs.db")
     cursor = conn.cursor()
+        # Create jobs table if it doesn't exist
+    cursor.execute("CREATE TABLE IF NOT EXISTS jobs (id INTEGER PRIMARY KEY AUTOINCREMENT, company TEXT, position TEXT, date_posted TEXT)")
+
     cursor.execute("SELECT company, position, date_posted FROM jobs ORDER BY date_posted DESC")
     jobs = [{"company": row[0], "position": row[1], "date_posted": row[2]} for row in cursor.fetchall()]
     conn.close()
