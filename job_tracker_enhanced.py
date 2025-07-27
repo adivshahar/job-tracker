@@ -18,7 +18,7 @@ SMTP_PORT = 587
 DB_NAME = "jobs.db"
 
 # Compute the absolute path to the companies file relative to this script
-DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 COMPANIES_FILE = os.path.join(DATA_DIR, 'all_100_companies_israel.json')
 
 LOG_FILE = "job_tracker.log"
