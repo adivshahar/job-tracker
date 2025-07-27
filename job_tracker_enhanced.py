@@ -16,7 +16,11 @@ EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 DB_NAME = "jobs.db"
-COMPANIES_FILE = "data/all_100_companies_israel.json"
+
+# Compute the absolute path to the companies file relative to this script
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data')
+COMPANIES_FILE = os.path.join(DATA_DIR, 'all_100_companies_israel.json')
+
 LOG_FILE = "job_tracker.log"
 
 KEYWORDS = [
